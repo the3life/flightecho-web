@@ -1,0 +1,27 @@
+{
+  "name": "flightecho-web",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "@lit-labs/router": "^0.1.4",
+    "@lit-labs/signals": "^0.3.0",
+    "@lit/context": "^1.1.6",
+    "@supabase/supabase-js": "^2.110.7",
+    "dayjs": "^1.11.21",
+    "dompurify": "^3.4.12",
+    "lit": "^3.3.3",
+    "marked": "^18.0.6"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.1"
+  }
+}

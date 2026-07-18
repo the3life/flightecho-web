@@ -1,0 +1,133 @@
+/* Eğer tema sistemi yoksa otomatik işletim sistemi teması */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --news-bg: #15171a;
+        --news-card: #202327;
+        --news-border: #2d3238;
+
+        --news-title: #f4f4f4;
+        --news-text: #d2d5da;
+        --news-date: #9ca3af;
+
+        --news-shadow: 0 8px 24px rgba(0,0,0,.35);
+    }
+}
+
+.news-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 24px;
+    background: var(--news-bg);
+}
+
+.news {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.news-item {
+    background: var(--news-card);
+    border: 1px solid var(--news-border);
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: var(--news-shadow);
+
+    transition: .25s ease;
+}
+
+.news-item:hover {
+    transform: translateY(-2px);
+    border-color: var(--news-accent);
+}
+
+.news-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--news-title);
+
+    margin-bottom: 6px;
+}
+
+.news-title::before {
+    content: "";
+    width: 5px;
+    height: 24px;
+    border-radius: 99px;
+    background: var(--news-accent);
+}
+
+.news-badge {
+    padding: 3px 10px;
+
+    border-radius: 999px;
+    background: var(--badge-bg);
+    color: var(--badge-text);
+
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: .3px;
+}
+
+.news-date {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    font-size: 13px;
+    color: var(--news-date);
+
+    margin-bottom: 16px;
+}
+
+.news-date::before {
+    content: "🕒";
+    font-size: 12px;
+}
+
+.news-text {
+    color: var(--news-text);
+    line-height: 1.75;
+    font-size: 15px;
+    /*white-space: pre-wrap;*/
+}
+
+.news-item + .news-item {
+    margin-top: 4px;
+}
+
+:host {
+    --news-bg: #ffffff;
+    --news-card: #ffffff;
+    --news-border: #e6e6e6;
+
+    --news-title: #1f2937;
+    --news-text: #4b5563;
+    --news-date: #8b949e;
+
+    --news-accent: #4FC3F7;
+    --news-shadow: 0 4px 16px rgba(0,0,0,.06);
+
+    --badge-bg: #2ecc71;
+    --badge-text: #ffffff;
+}
+
+:host-context([data-theme="dark"]) {
+    --news-bg: #222;
+    --news-card: #202327;
+    --news-border: #2d3238;
+
+    --news-title: #f4f4f4;
+    --news-text: #d2d5da;
+    --news-date: #9ca3af;
+
+    --news-accent: #4FC3F7;
+    --news-shadow: 0 8px 24px rgba(0,0,0,.35);
+
+    --badge-bg: #2ecc71;
+    --badge-text: white;
+}
