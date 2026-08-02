@@ -1,0 +1,172 @@
+{
+  "loading": "Yükleniyor...",
+  "auth_required": {
+    "title": "Giriş Yapmanız Gerekiyor",
+    "message": "Bu sayfaya erişmek için giriş yapmanız gerekiyor. Lütfen giriş yapın ve tekrar deneyin."
+  },
+  "errors": {
+    "app": {
+      "title": "Uygulama Hatası",
+      "message": "Uygulama hazırlanırken bir hata oluştur.Lütfen bu pencereyi kapatın."
+    },
+    "page": {
+      "title": "Hata",
+      "message": "Sayfa yüklenirken bir hata oluştu."
+    }
+  },
+  "languages": {
+    "en": "İngilizce",
+    "tr": "Türkçe",
+    "th": "Tayca"
+  },
+  "news": {
+    "status": {
+      "draft": "Taslak",
+      "published": "Yayında",
+      "archived": "Arşivlendi"
+    }
+  },
+  "admin_page": {
+    "title": "Admin Panel",
+    "login": {
+      "title": "Admin Girişi",
+      "subtitle": "Girsene ulan",
+      "email": "E-Posta",
+      "password": "Şifre",
+      "sign_in": "Giriş Yap",
+      "secure": "Secure"
+    },
+    "tabs": {
+      "users": {
+        "title": "Üyeler",
+        "total": "Toplam Üye",
+        "online": "Online Üye",
+        "anonymous": "Anonim Üye",
+        "table": {
+          "display_name": "Ad",
+          "email": "E-Posta",
+          "registration": "Katılım",
+          "mode": "Mode",
+          "status": "Durum"
+        },
+        "search": {
+          "input": {
+            "placeholder": "Üye ara..."
+          }
+        }
+      },
+      "news": {
+        "title": "Haberler",
+        "toolbar": {
+          "add": "Haber Yaz"
+        },
+        "table": {
+          "title": "Başlık",
+          "date": "Tarih",
+          "status": "Durum"
+        },
+        "modal": {
+          "title": "Haber Yaz",
+          "language": "Dil",
+          "status": "Durum",
+          "inputs": {
+            "language": "Dil",
+            "title": {
+              "label": "Başlık",
+              "placeholder": "Haber başlığı girin..."
+            },
+            "text": {
+              "label": "İçerik",
+              "placeholder": "Markdown desteklenir..."
+            }
+          },
+          "actions": {
+            "preview": "Önizleme",
+            "cancel": "İptal",
+            "save": "Kaydet"
+          },
+          "messages": {
+            "running": "Lütfen bekleyiniz...",
+            "insert": {
+              "success": "Kayıt işlemi başarıyla yapıldı",
+              "error": "Kayıt işlemi sırasında bir hata oluştu!"
+            },
+            "update": {
+              "success": "Güncelleme işlemi başarıyla yapıldı",
+              "error": "Güncelleme işlemi sırasında bir hata oluştu!"
+            }
+          }
+        }
+      }
+    }
+  },
+  "news_page": {
+    "title": "Haberler",
+    "badge": "YENİ",
+    "status": {
+      "draft": "Taslak",
+      "published": "Yayında",
+      "archived": "Arşivlendi"
+    }
+  },
+  "support_center_page": {
+    "title": "Destek Merkezi",
+    "send_btn": "Gönder",
+    "input": {
+      "placeholder": "Bir mesaj yazın..."
+    },
+    "you": "Sen"
+  },
+  "redeem_code_page": {
+    "input": {
+      "title": "Kod Kullan",
+      "subtitle": "Sahip olduğunuz kodu buraya girebilirsiniz. Kod büyük/küçük harf duyarlı değildir.",
+      "redeem_btn": "Kullan",
+      "input": {
+        "label": "Kod",
+        "placeholder": "Örn: ABCD-1234-EFGH-5678"
+      }
+    },
+    "verifying": {
+      "title": "Onaylanıyor",
+      "subtitle": "Lütfen bekleyin. Bu işlem birkaç saniye sürebilir.",
+      "failed": "Onay Başarısız",
+      "invalid": "Lütfen geçerli bir kod girin",
+      "checking": "Kod kontrol ediliyor...",
+      "server": "Sunucu ile doğrulanıyor...",
+      "preparing": "Sonuç hazırlanıyor...",
+      "retry_btn": "Yeni Kod Gir",
+      "codes": {
+        "SUCCESS": "Kod başarıyla doğrulandı.",
+        "FAILED": "Kod doğrulanırken bir hata oluştu!",
+        "CODE_NOT_FOUND": "Girdiğiniz kod geçersiz veya süresi dolmuş. Lütfen tekrar deneyin.",
+        "CODE_DISABLED": "Bu kod artık kullanılamaz.",
+        "CODE_EXPIRED": "Bu kodun süresi dolmuş.",
+        "CODE_ALREADY_USED": "Bu kodu zaten daha önce kullandınız.",
+        "CODE_LIMIT_REACHED": "Bu kodun kullanım hakkı tükenmiştir."
+      }
+    },
+    "result": {
+      "title": "Kod Doğrulandı",
+      "subtitle": "Aktivasyon kodunuz başarıyla doğrulandı. Aşağıdaki ödülün kilidi açıldı."
+    }
+  },
+  "release_notes_page": {
+    "title": "Sürüm Notları",
+    "version": "Sürüm",
+    "current_version": "Şimdiki Sürüm",
+    "latest_badge": "Son sürüm"
+  },
+  "version_history_page": {
+    "title": "Versiyon Geçmişi",
+    "installed": "Kurulu"
+  },
+  "grant_app": {
+    "errors": {
+      "download": {
+        "title": "İndirme Hatası",
+        "message": "İndirme bağlantısı hazırlanırken bir hata oluştu."
+      }
+    }
+  }
+}

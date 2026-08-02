@@ -1,0 +1,75 @@
+{
+  "loading": "Loading...",
+  "news": {
+    "title": "News",
+    "badge": "NEW",
+    "status": {
+      "draft": "Draft",
+      "published": "Published"
+    }
+  },
+  "support_center": {
+    "title": "Support Center",
+    "send_btn": "Send",
+    "input": {
+      "placeholder": "Type a message..."
+    },
+    "you": "You"
+  },
+  "redeem_code": {
+    "input": {
+      "title": "Redeem Code",
+      "subtitle": "Enter your code here. The code is not case-sensitive.",
+      "redeem_btn": "Redeem",
+      "input": {
+        "label": "Code",
+        "placeholder": "e.g. ABCD-1234-EFGH-5678"
+      }
+    },
+    "verifying": {
+      "title": "Verifying",
+      "subtitle": "Please wait. This process may take a few seconds.",
+      "failed": "Verification Failed",
+      "invalid": "Please enter a valid code.",
+      "checking": "Checking code...",
+      "server": "Verifying with the server...",
+      "preparing": "Preparing result...",
+      "retry_btn": "Enter Another Code",
+      "codes": {
+        "SUCCESS": "The code has been successfully verified.",
+        "FAILED": "An error occurred while verifying the code!",
+        "CODE_NOT_FOUND": "The code you entered is invalid or has expired. Please try again.",
+        "CODE_DISABLED": "This code is no longer valid.",
+        "CODE_EXPIRED": "This code has expired.",
+        "CODE_ALREADY_USED": "You've already used this code before.",
+        "CODE_LIMIT_REACHED": "The usage limit for this code has been reached."
+      }
+    },
+    "result": {
+      "title": "Code Verified",
+      "subtitle": "Your activation code has been successfully verified. The following reward has been unlocked."
+    }
+  },
+  "release_notes": {
+    "title": "Release Notes",
+    "version": "Version",
+    "current_version": "Current Version",
+    "latest_badge": "Latest"
+  },
+  "grant_app": {
+    "errors": {
+      "download": {
+        "title": "Download Error",
+        "message": "An error occurred while preparing the download link."
+      }
+    }
+  },
+  "auth_required": {
+    "title": "Login Required",
+    "message": "You must be signed in to access this page.Please log in and try again."
+  },
+  "page_error": {
+    "title": "Error",
+    "message": "An error occurred while the page was loading."
+  }
+}

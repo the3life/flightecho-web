@@ -1,123 +1,49 @@
-import {supabase} from "./supabase.ts";
 import type {SupportMessage} from "../models/support-message.ts";
-import type {RealtimeChannel} from "@supabase/supabase-js";
 import {createContext} from "@lit/context";
-import {signal} from "@lit-labs/signals";
+import {type FilterBuilder, SupabaseService} from "./supabase-service.ts";
+import type {User} from "../models/user.ts";
 
-export class SupportService {
-    public loading = signal<boolean>(true);
-    public messages = signal<SupportMessage[]>([]);
-
-    private channel?: RealtimeChannel;
-
+export class SupportService extends SupabaseService<SupportMessage> {
     constructor() {
-        this.load();
-        this.subscribe();
-    }
-
-    async unsubscribe() {
-        if (!this.channel)
-            return Promise.resolve();
-
-        await supabase.removeChannel(this.channel);
-        this.channel = undefined;
+        super("fe_v4", "support_center");
     }
 
     send(text: string) {
-        return supabase.rpc("send_support_message", {"p_text": text});
+        return this.db
+            .from("support_center")
+            .insert({text: text});
     }
 
-    private load() {
-        supabase
-            .from("support_center_v4")
-            .select(`
-                *,
-                profile:profiles_v4 (*)
-            `)
-            .order("id")
-            .then(r => {
-                if (r.success) {
-                    this.messages.set(r.data);
-                    this.loading.set(false);
-                }
-            });
+    protected async insert(item: SupportMessage) {
+        item.user = await this.getUser(item.user_id);
+
+        super.insert(item);
     }
 
-    private async getMessage(id: number) {
-        const {data, error} = await supabase
-            .from("support_center_v4")
-            .select(`
-                *,
-                profile:profiles_v4 (*)
-            `)
-            .eq("id", id)
-            .single();
+    protected async update(item: SupportMessage) {
+        item.user = await this.getUser(item.user_id);
+
+        super.update(item);
+    }
+
+    protected query(): FilterBuilder {
+        return this.table
+            .select("*,user:users (*)")
+            .order("id");
+    }
+
+    private async getUser(userId: string) {
+        const {data, error} = await this.db
+            .from("users")
+            .select("*")
+            .eq("id", userId)
+            .single<User>();
 
         if (error)
             return null;
 
-        return data as SupportMessage;
-    }
-
-    private subscribe() {
-        if (this.channel)
-            return;
-
-        this.channel = supabase
-            .channel("support_center_v4")
-            .on(
-                "postgres_changes",
-                {
-                    event: "*",
-                    schema: "public",
-                    table: "support_center_v4"
-                },
-                async payload => {
-                    switch (payload.eventType) {
-                        case "INSERT": {
-                            const message = await this.getMessage(payload.new.id);
-
-                            if (!message)
-                                return;
-
-                            this.messages.set([...this.messages.get(), message]);
-
-                            break;
-                        }
-
-                        case "UPDATE": {
-                            const message = payload.new as SupportMessage;
-
-                            if (!message)
-                                return;
-
-                            this.messages.set(
-                                this.messages.get().map(x =>
-                                    x.id === message.id
-                                        ? {
-                                            ...x,
-                                            text: message.text
-                                        }
-                                        : x
-                                ));
-
-                            break;
-                        }
-
-                        case "DELETE": {
-                            this.messages.set(
-                                this.messages.get().filter(
-                                    x => x.id !== payload.old.id
-                                )
-                            );
-
-                            break;
-                        }
-                    }
-                }
-            )
-            .subscribe();
+        return data;
     }
 }
 
-export const supportServiceContext = createContext<SupportService>('support-service');
+export const supportServiceContext = createContext<SupportService>("support-center-service");

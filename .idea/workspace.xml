@@ -4,7 +4,126 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6684df7-2dea-4bb1-934d-5373c35f5952" name="Changes" comment="Commit" />
+    <list default="true" id="a6684df7-2dea-4bb1-934d-5373c35f5952" name="Changes" comment="Commit">
+      <change afterPath="$PROJECT_DIR$/.env.development" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env.production" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/remote-config-dev.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/remote-config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/app-error.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/auth-required.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/select-box.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/app-store.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/application-api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/delay.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/environment.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/github-api.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/host.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/navigate.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/query.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/reward-store.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/router.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/database.types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/i18n/en.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/i18n/th.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/i18n/tr.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/i18n/translation.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/application.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/code.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/database.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/flight-mode.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/github/github-content.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/language.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/read-state.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/supabase-model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/supabase-response.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/translations.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/user-state.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/user.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/admin-page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/admin-page.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/admin-page2.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/admin-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/login/admin-login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/login/admin-login.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/tabs/news-modal.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/tabs/news-modal.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/tabs/news-tab.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/tabs/news-tab.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/tabs/shared.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/tabs/support-center-tab.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/tabs/support-center-tab.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/tabs/users-tab.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/admin/tabs/users-tab.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/redeem-code/redeem-code-page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/redeem-code/redeem-code-page.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/release-notes/release-notes-page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/release-notes/release-notes-page.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/version-history/version-history-page.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/version-history/version-history-page.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/read-state-service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/supabase-service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/user-service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/config.dev.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/config.prod.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/config.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173740_create_schema_fe_v4.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173741_create_enums.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173742_create_create_user.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173745_create_rpc_response.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173753_create_auth_functions.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173754_create_users.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173755_create_user_roles.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173756_create_languages.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173758_create_translation_entities.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173759_create_translation_records.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173760_create_translation_fields.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173761_create_translations.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173762_create_v_translation_records.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173763_create_translation_record.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173764_update_translation_record.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173765_create_test.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173770_create_apps.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173804_create_news.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726182248_create_codes.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726182654_create_code_redemptions.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726183602_create_read_states.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726190453_create_support_center.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726633706_create_redeem_code.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/migrations/99999999999998_create_set_user_id_automatically.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/seed.dev.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/supabase/seed.prod.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app-root.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-root.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/bootstrap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bootstrap.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/loading-spinner.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loading-spinner.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/language.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/markdown.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/markdown.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/query.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/news.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/news.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/profile.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/support-message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/support-message.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/home-page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home-page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/news/news-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/news-page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/news/news-page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/news-page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/support/support-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/support-center/support-center-page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/support/support-page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/support-center/support-center-page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/auth-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/auth-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/navigation-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/navigation-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/news-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/news-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/supabase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/supabase.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/support-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/support-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/theme-service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +132,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="CSS File" />
         <option value="TypeScript File" />
       </list>
@@ -20,6 +140,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="SOFT" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -41,37 +162,65 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;W:/Projects/flightecho-web/src/services&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.npm dev.executor&quot;: &quot;Debug&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;W:\\Projects\\flightecho-web\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Attach to Node.js/Chrome.JS Debug.executor": "Debug",
+    "Attach to Node.js/Chrome.Unnamed.executor": "Debug",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.JS Debug.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "W:/Projects/flightecho-web",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "npm.npm dev.executor": "Debug",
+    "settings.editor.selected.configurable": "editing.templates",
+    "ts.external.directory.path": "W:\\Projects\\flightecho-web\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ],
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/Change SQL Dialect": [
+      "PostgreSQL",
+      "SQLite"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="W:\Projects\flightecho-web" />
+      <recent name="W:\Projects\flightecho-web\supabase\migrations" />
+      <recent name="W:\Projects\flightecho-web\src\pages\admin\tabs" />
       <recent name="W:\Projects\flightecho-web\src\services" />
-      <recent name="W:\Projects\flightecho-web\src\pages\home" />
+      <recent name="W:\Projects\flightecho-web\src\models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="W:\Projects\flightecho-web\src\app" />
+      <recent name="W:\Projects\flightecho-web\src\core" />
+      <recent name="W:\Projects\flightecho-web\src\pages\admin\tabs" />
+      <recent name="W:\Projects\flightecho-web\src\i18n" />
       <recent name="W:\Projects\flightecho-web\src" />
+      <recent name="W:\Projects\flightecho-web\src\app" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.npm dev">
+    <configuration name="JS Debug" type="ChromiumRemoteDebugType" factoryName="Chromium Remote" port="9222" restartOnDisconnect="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="Debug" type="CompoundRunConfigurationType">
+      <toRun name="JS Debug" type="ChromiumRemoteDebugType" />
+      <toRun name="npm dev" type="js.build_tools.npm" />
+      <method v="2" />
+    </configuration>
     <configuration name="npm dev" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -82,6 +231,11 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Attach to Node.js/Chrome.JS Debug" />
+      <item itemvalue="Compound.Debug" />
+      <item itemvalue="npm.npm dev" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -99,12 +253,104 @@
       <updated>1784318474263</updated>
       <workItem from="1784318475200" duration="11110000" />
       <workItem from="1784363720606" duration="30227000" />
-      <workItem from="1784397923393" duration="11000" />
+      <workItem from="1784397923393" duration="15983000" />
+      <workItem from="1784449121915" duration="29610000" />
+      <workItem from="1784568773633" duration="27338000" />
+      <workItem from="1784638819124" duration="14357000" />
+      <workItem from="1784655329053" duration="3788000" />
+      <workItem from="1784714563130" duration="2376000" />
+      <workItem from="1784726314226" duration="3783000" />
+      <workItem from="1784730419942" duration="8225000" />
+      <workItem from="1784791438078" duration="885000" />
+      <workItem from="1784828921802" duration="5346000" />
+      <workItem from="1784877328372" duration="4450000" />
+      <workItem from="1784895301731" duration="7754000" />
+      <workItem from="1784904290138" duration="7857000" />
+      <workItem from="1784964395095" duration="11669000" />
+      <workItem from="1784987654385" duration="14588000" />
+      <workItem from="1785006488550" duration="1470000" />
+      <workItem from="1785066791904" duration="32303000" />
+      <workItem from="1785131937342" duration="3760000" />
+      <workItem from="1785135734582" duration="9333000" />
+      <workItem from="1785153647272" duration="274000" />
+      <workItem from="1785221223339" duration="10886000" />
+      <workItem from="1785241181458" duration="27825000" />
+      <workItem from="1785306610055" duration="14420000" />
+      <workItem from="1785324999868" duration="1063000" />
+      <workItem from="1785326083692" duration="4283000" />
+      <workItem from="1785427764196" duration="9839000" />
+      <workItem from="1785480496080" duration="4261000" />
+      <workItem from="1785508026957" duration="18241000" />
+      <workItem from="1785565927364" duration="14667000" />
+      <workItem from="1785598214222" duration="8913000" />
+      <workItem from="1785621484902" duration="8733000" />
+      <workItem from="1785668054107" duration="7798000" />
+      <workItem from="1785684988899" duration="7475000" />
     </task>
+    <task id="LOCAL-00001" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1784398027882</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1784398027882</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1785694681850</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1785694681850</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1785694864596</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1785694864596</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1785695183048</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1785695183048</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1785695220374</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1785695220374</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1785695240405</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1785695240405</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -112,5 +358,12 @@
     </ignored-roots>
     <MESSAGE value="Commit" />
     <option name="LAST_COMMIT_MESSAGE" value="Commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="javascript-exception" />
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -2,8 +2,26 @@ import {marked} from "marked";
 import {unsafeHTML} from "lit/directives/unsafe-html.js";
 
 export class Markdown {
-    static render(content: string) {
+    static render(content?: string | null) {
+        if (!content)
+            return "";
+
         const renderer = new marked.Renderer();
+
+        renderer.image = ({href, text, title}) => {
+            if (!href) return "";
+
+            return `
+<div class="markdown-image">
+    <img
+        src="${href}"
+        alt="${text ?? ""}"
+        title="${title ?? ""}"
+        loading="lazy"
+    />
+    ${text ? `<div class="caption">${text}</div>` : ""}
+</div>`;
+        };
 
         renderer.link = ({href, text}) => {
             if (!href)

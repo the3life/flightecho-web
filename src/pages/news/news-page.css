@@ -1,20 +1,4 @@
-/* Eğer tema sistemi yoksa otomatik işletim sistemi teması */
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) {
-        --news-bg: #15171a;
-        --news-card: #202327;
-        --news-border: #2d3238;
-
-        --news-title: #f4f4f4;
-        --news-text: #d2d5da;
-        --news-date: #9ca3af;
-
-        --news-shadow: 0 8px 24px rgba(0,0,0,.35);
-    }
-}
-
 .news-container {
-    max-width: 900px;
     margin: auto;
     padding: 24px;
     background: var(--news-bg);
@@ -51,6 +35,12 @@
     color: var(--news-title);
 
     margin-bottom: 6px;
+}
+
+.news-title p {
+    display: inline;
+    margin: 0;
+    padding: 0;
 }
 
 .news-title::before {
@@ -96,9 +86,24 @@
     /*white-space: pre-wrap;*/
 }
 
+.news-text p {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
 .news-item + .news-item {
     margin-top: 4px;
 }
+
+/*.news-item.read {
+    opacity: 0.75;
+    border-color: var(--news-accent);
+}
+
+.news-item.read .news-title {
+    color: var(--news-text);
+}*/
 
 :host {
     --news-bg: #ffffff;

@@ -1,44 +1,59 @@
 import {supabase} from "./supabase.ts";
-import type {Session} from "@supabase/supabase-js";
+import type {Session, User as SupabaseUser} from "@supabase/supabase-js";
 import {signal} from "@lit-labs/signals";
 import {createContext} from "@lit/context";
-import type {Profile} from "../models/profile.ts";
-import {Query} from "../helpers/query.ts";
+import {Query} from "../core/query.ts";
+import {environment} from "../core/environment.ts";
+import {isDesktop} from "../core/app-store.ts";
+import type {User} from "../models/user.ts";
 
 export class AuthService {
-    public currentSession = signal<Session | null>(null);
+    public currentUser = signal<SupabaseUser | undefined | null>(null);
+    public currentSession = signal<Session | undefined | null>(null);
 
     constructor() {
         supabase.auth.onAuthStateChange((event, session) => {
+            this.currentUser.set(session?.user);
             this.currentSession.set(session);
 
             switch (event) {
                 case "SIGNED_OUT":
+                    this.currentUser.set(null);
                     this.currentSession.set(null);
                     break;
             }
         });
-
-        if (Query.has("accessToken") && Query.has("refreshToken")) {
-            const accessToken = Query.get("accessToken");
-            const refreshToken = Query.get("refreshToken");
-
-            supabase.auth.setSession({
-                access_token: accessToken!,
-                refresh_token: refreshToken!
-            }).then(r => console.log(r));
-        }
     }
 
     get isLoggedIn() {
         return this.currentSession.get() != null;
     }
 
-    isItMe(profile?: Profile) {
-        if (!profile)
+    get uid() {
+        return this.currentUser.get()?.id;
+    }
+
+    async initialize() {
+        await this.logout();
+
+        if (!isDesktop() && environment.isDev) {
+            await this.login("the3life@gmail.com", "123456");
+        } else if (Query.has("access_token") && Query.has("refresh_token")) {
+            let accessToken = Query.get("access_token");
+            let refreshToken = Query.get("refresh_token");
+
+            await this.setSession({
+                access_token: accessToken!,
+                refresh_token: refreshToken!
+            });
+        }
+    }
+
+    isItMe(user?: User | null) {
+        if (!user)
             return false;
 
-        return this.currentSession.get()?.user.id === profile.auth_id;
+        return this.currentUser.get()?.id === user.id;
     }
 
     async login(email: string, password: string) {
@@ -60,22 +75,25 @@ export class AuthService {
     }
 
     async getSession() {
-        const {data} =
+        let {data} =
             await supabase.auth.getSession();
 
         return data.session;
     }
 
+    async setSession(session: {
+        access_token: string
+        refresh_token: string
+    }) {
+        await supabase.auth.setSession(session);
+    }
+
     async getUser() {
-        const {data} =
+        let {data} =
             await supabase.auth.getUser();
 
         return data.user;
     }
-
-    /*async isLoggedIn() {
-        return (await this.getSession()) != null;
-    }*/
 }
 
-export const authServiceContext = createContext<AuthService>('auth-service');
+export const authServiceContext = createContext<AuthService>("auth-service");

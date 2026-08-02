@@ -10,4 +10,4 @@ export class NavigationService {
     }
 }
 
-export const navigationServiceContext = createContext<NavigationService>('navigation-service');
+export const navigationServiceContext = createContext<NavigationService>("navigation-service");

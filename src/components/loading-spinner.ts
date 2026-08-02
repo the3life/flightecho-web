@@ -5,12 +5,15 @@ import {css, html, LitElement} from "lit";
 export class LoadingSpinner extends LitElement {
     static styles = css`
         :host {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            min-height: 220px;
+            position: fixed;
+            inset: 0;
+
+            display: grid;
+            place-items: center;
+            
+            background: var(--bg);
+            
+            z-index: 9999;
         }
 
         .spinner {

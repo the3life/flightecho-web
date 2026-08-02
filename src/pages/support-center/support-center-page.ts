@@ -1,20 +1,18 @@
 import {customElement, property, query} from "lit/decorators.js";
-import {html, LitElement, unsafeCSS} from "lit";
-import styles from './support-page.css?inline';
+import {html, unsafeCSS} from "lit";
+import styles from './support-center-page.css?inline';
 import globalCss from "../../index.css?inline";
 import {SupportService, supportServiceContext} from "../../services/support-service.ts";
 import type {SupportMessage} from "../../models/support-message.ts";
 import dayjs from "dayjs";
 import {consume} from "@lit/context";
-import {SignalWatcher} from "@lit-labs/signals";
-import {AuthService, authServiceContext} from "../../services/auth-service.ts";
+import {t} from "../../i18n/translation.ts";
+import {Page} from "../page.ts";
+import {isAdmin} from "../../models/user.ts";
 
-@customElement("support-page")
-export class SupportPage extends SignalWatcher(LitElement) {
+@customElement("support-center-page")
+export class SupportCenterPage extends Page {
     @property() messageText = "";
-
-    @consume({context: authServiceContext})
-    private authService!: AuthService;
 
     @consume({context: supportServiceContext})
     private supportService!: SupportService;
@@ -24,25 +22,47 @@ export class SupportPage extends SignalWatcher(LitElement) {
 
     static styles = [unsafeCSS(globalCss), unsafeCSS(styles)];
 
-    protected updated() {
+    constructor() {
+        super("member");
+    }
+
+    protected async initializePage() {
+        await this.supportService.initialize();
+        this.supportService.subscribe();
+
+        return true;
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+
+        this.readStateService.addObserver(this, "support_center", ".message-item:not(.bottom)");
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
+
+        this.readStateService.removeObserver("support_center");
+    }
+
+    protected async updated() {
         this.scrollToBottom();
     }
 
-    private sendMessage() {
-        this.supportService.send(this.messageText).then(r => {
-            this.messageText = "";
-            console.log(r);
-        });
+    private async sendMessage() {
+        await this.supportService.send(this.messageText);
+
+        this.messageText = "";
     }
 
     private getMessageClass(message: SupportMessage) {
         if (message.is_system)
             return "system";
 
-        if (this.authService.isItMe(message.profile))
+        if (this.authService.isItMe(message.user))
             return "user";
 
-        if (message.profile?.is_admin)
+        if (isAdmin(message.user))
             return "admin";
 
         return "other";
@@ -52,16 +72,16 @@ export class SupportPage extends SignalWatcher(LitElement) {
         if (message.is_system)
             return html``;
 
-        if (this.authService.isItMe(message.profile))
+        if (this.authService.isItMe(message.user))
             return html`
-                <div class="name">You</div>`;
+                <div class="name">${t("support_center.you")}</div>`;
 
-        if (message.profile?.is_admin)
+        if (isAdmin(message.user))
             return html`
-                <div class="name">👑 Admin</div>`;
+                <div class="name">👑 ${message.user?.display_name} (Admin)</div>`;
 
         return html`
-            <div class="name">${message.profile?.display_name}</div>`;
+            <div class="name">${message.user?.display_name}</div>`;
     }
 
     private scrollToBottom() {
@@ -77,24 +97,19 @@ export class SupportPage extends SignalWatcher(LitElement) {
         this.messageText = (e.target as HTMLInputElement).value;
     };
 
-    private onKeyDown = (e: KeyboardEvent) => {
+    private onKeyDown = async (e: KeyboardEvent) => {
         if (e.key === "Enter") {
             e.preventDefault();
-            this.sendMessage();
+            await this.sendMessage();
         }
     };
 
-    render() {
-        if (this.supportService.loading.get()) {
-            return html`
-                <loading-spinner></loading-spinner>`;
-        }
-
+    renderPage() {
         return html`
             <div class="message-container">
                 <div class="messages">
-                    ${this.supportService.messages.get().map(message => html`
-                        <div class="message-item ${this.getMessageClass(message)}">
+                    ${this.supportService.items.get().map(message => html`
+                        <div class="message-item ${this.getMessageClass(message)}" data-id=${message.id}>
                             <div class="bubble">
                                 <div class="name">${this.getUserName(message)}</div>
                                 ${message.text}
@@ -108,10 +123,10 @@ export class SupportPage extends SignalWatcher(LitElement) {
                 <div class="input-area">
                     <input .value=${this.messageText}
                            @input="${this.onInput}"
-                           @keydown=${this.onKeyDown} placeholder="Type a message...">
+                           @keydown=${this.onKeyDown} placeholder="${t("support_center.input.placeholder")}">
 
                     <button @click=${this.sendMessage}>
-                        Send
+                        ${t("support_center.send_btn")}
                     </button>
                 </div>
             </div>

@@ -1,24 +1,12 @@
-:root {
-    color-scheme: light dark;
-    background-color: #ffffff;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        background-color: #16171d;
-    }
-}
-
 body {
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-width: 320px;
     min-height: 100svh;
+
     background-color: var(--bg);
     font-family: var(--font-family);
     color: var(--text);
+
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -48,36 +36,6 @@ hr {
     margin: 16px 0;
 }
 
-#loading {
-    position: fixed;
-    inset: 0;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    background: #16171d;
-    color: white;
-    z-index: 99999;
-}
-
-.spinner {
-    width: 40px;
-    height: 40px;
-    border: 4px solid #555;
-    border-top-color: white;
-    border-radius: 50%;
-    animation: spin .8s linear infinite;
-    margin-bottom: 16px;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -94,6 +52,24 @@ hr {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--scroll-thumb-hover);
+}
+
+.markdown-image {
+    margin: 16px 0;
+    text-align: center;
+}
+
+.markdown-image img {
+    /*width: 100%;*/
+    max-width: 100%;
+    border-radius: 12px;
+    display: block;
+}
+
+.markdown-image .caption {
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--news-date);
 }
 
 .youtube-video {
