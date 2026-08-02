@@ -5,124 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6684df7-2dea-4bb1-934d-5373c35f5952" name="Changes" comment="Commit">
-      <change afterPath="$PROJECT_DIR$/.env.development" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.env.production" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/remote-config-dev.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/remote-config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/app-error.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/auth-required.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/select-box.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/app-store.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/application-api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/delay.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/environment.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/github-api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/host.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/navigate.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/query.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/reward-store.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/router.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database.types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/i18n/en.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/i18n/th.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/i18n/tr.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/i18n/translation.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/application.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/code.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/database.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/flight-mode.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/github/github-content.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/language.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/read-state.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/supabase-model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/supabase-response.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/translations.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/user-state.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/user.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/admin-page.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/admin-page.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/admin-page2.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/admin-theme.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/login/admin-login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/login/admin-login.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/tabs/news-modal.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/tabs/news-modal.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/tabs/news-tab.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/tabs/news-tab.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/tabs/shared.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/tabs/support-center-tab.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/tabs/support-center-tab.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/tabs/users-tab.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/admin/tabs/users-tab.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/redeem-code/redeem-code-page.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/redeem-code/redeem-code-page.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/release-notes/release-notes-page.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/release-notes/release-notes-page.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/version-history/version-history-page.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/version-history/version-history-page.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/read-state-service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/supabase-service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/user-service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/config.dev.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/config.prod.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/config.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173740_create_schema_fe_v4.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173741_create_enums.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173742_create_create_user.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173745_create_rpc_response.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173753_create_auth_functions.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173754_create_users.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173755_create_user_roles.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173756_create_languages.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173758_create_translation_entities.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173759_create_translation_records.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173760_create_translation_fields.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173761_create_translations.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173762_create_v_translation_records.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173763_create_translation_record.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173764_update_translation_record.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173765_create_test.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173770_create_apps.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726173804_create_news.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726182248_create_codes.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726182654_create_code_redemptions.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726183602_create_read_states.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726190453_create_support_center.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/migrations/20260726633706_create_redeem_code.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/migrations/99999999999998_create_set_user_id_automatically.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/seed.dev.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supabase/seed.prod.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app-root.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-root.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/bootstrap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/bootstrap.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/loading-spinner.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loading-spinner.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/language.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/markdown.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/markdown.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/query.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/news.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/news.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/profile.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/support-message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/support-message.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/home-page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home-page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/news/news-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/news-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/news/news-page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/news-page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/support/support-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/support-center/support-center-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/support/support-page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/support-center/support-center-page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/auth-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/auth-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/navigation-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/navigation-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/news-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/news-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/supabase.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/supabase.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/support-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/support-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/theme-service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/remote-config-dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/remote-config-dev.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/remote-config.json" beforeDir="false" afterPath="$PROJECT_DIR$/remote-config.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -285,7 +170,7 @@
       <workItem from="1785598214222" duration="8913000" />
       <workItem from="1785621484902" duration="8733000" />
       <workItem from="1785668054107" duration="7798000" />
-      <workItem from="1785684988899" duration="7475000" />
+      <workItem from="1785684988899" duration="8171000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <option name="closed" value="true" />
@@ -335,7 +220,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785695240405</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1785695862664</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1785695862664</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
