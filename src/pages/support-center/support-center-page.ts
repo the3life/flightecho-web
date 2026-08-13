@@ -1,7 +1,5 @@
 import {customElement, property, query} from "lit/decorators.js";
 import {html, unsafeCSS} from "lit";
-import styles from './support-center-page.css?inline';
-import globalCss from "../../index.css?inline";
 import {SupportService, supportServiceContext} from "../../services/support-service.ts";
 import type {SupportMessage} from "../../models/support-message.ts";
 import dayjs from "dayjs";
@@ -9,9 +7,14 @@ import {consume} from "@lit/context";
 import {t} from "../../i18n/translation.ts";
 import {Page} from "../page.ts";
 import {isAdmin} from "../../models/user.ts";
+import styles from './support-center-page.css?inline';
+import {globalStyles} from "../../core/css.ts";
+import {Markdown} from "../../core/markdown.ts";
 
 @customElement("support-center-page")
 export class SupportCenterPage extends Page {
+    static styles = [globalStyles, unsafeCSS(styles)];
+
     @property() messageText = "";
 
     @consume({context: supportServiceContext})
@@ -19,8 +22,6 @@ export class SupportCenterPage extends Page {
 
     @query(".message-item.bottom")
     private bottom!: HTMLDivElement;
-
-    static styles = [unsafeCSS(globalCss), unsafeCSS(styles)];
 
     constructor() {
         super("member");
@@ -36,7 +37,7 @@ export class SupportCenterPage extends Page {
     connectedCallback() {
         super.connectedCallback();
 
-        this.readStateService.addObserver(this, "support_center", ".message-item:not(.bottom)");
+        this.readStateService.addObserver(this, "support_center", "support_center", ".message-item:not(.bottom)");
     }
 
     disconnectedCallback() {
@@ -50,6 +51,9 @@ export class SupportCenterPage extends Page {
     }
 
     private async sendMessage() {
+        if (!this.messageText)
+            return;
+
         await this.supportService.send(this.messageText);
 
         this.messageText = "";
@@ -74,7 +78,7 @@ export class SupportCenterPage extends Page {
 
         if (this.authService.isItMe(message.user))
             return html`
-                <div class="name">${t("support_center.you")}</div>`;
+                <div class="name">${t("support_center_page.you")}</div>`;
 
         if (isAdmin(message.user))
             return html`
@@ -106,27 +110,68 @@ export class SupportCenterPage extends Page {
 
     renderPage() {
         return html`
-            <div class="message-container">
-                <div class="messages">
+            <div class="message-container
+                w-screen
+                h-screen
+                bg-[var(--chat-bg)]
+                rounded-b-[15px]
+                overflow-hidden
+                flex
+                flex-col">
+                <div class="messages
+                    flex-1
+                    p-[15px]
+                    overflow-y-auto
+                    bg-[var(--messages-bg)]">
                     ${this.supportService.items.get().map(message => html`
-                        <div class="message-item ${this.getMessageClass(message)}" data-id=${message.id}>
-                            <div class="bubble">
-                                <div class="name">${this.getUserName(message)}</div>
-                                ${message.text}
-                                <div class="time">${dayjs(message.created_at).fromNow()}</div>
+                        <div class="message-item flex my-3 ${this.getMessageClass(message)}" data-id=${message.id}>
+                            <div class="bubble
+                                min-w-[140px]
+                                max-w-[70%]
+                                px-[15px]
+                                py-3
+                                leading-[1.4]
+                                break-words
+                                relative
+                                bg-[var(--user-bg)]
+                                text-[var(--user-text)]
+                                rounded-bl-[5px]">
+                                <div class="name
+                                    mb-1
+                                    text-xs
+                                    font-bold
+                                    opacity-75">${this.getUserName(message)}
+                                </div>
+                                ${Markdown.render(message.text)}
+                                <div class="time
+                                    mt-1.5
+                                    text-right
+                                    text-[11px]
+                                    opacity-60">${dayjs(message.created_at).fromNow()}
+                                </div>
                             </div>
                         </div>
                     `)}
                     <div class="message-item bottom"></div>
                 </div>
 
-                <div class="input-area">
+                <div class="input-area
+                    flex
+                    gap-2.5
+                    p-3
+                    bg-[var(--chat-bg)]
+                    border-t
+                    border-[var(--message-input-border)]">
                     <input .value=${this.messageText}
                            @input="${this.onInput}"
-                           @keydown=${this.onKeyDown} placeholder="${t("support_center.input.placeholder")}">
-
-                    <button @click=${this.sendMessage}>
-                        ${t("support_center.send_btn")}
+                           @keydown=${this.onKeyDown} placeholder="${t("support_center_page.input.placeholder")}"
+                           class="
+                           flex-1
+                               !bg-[var(--message-input-bg)]
+                               !text-[var(--message-input-text)]
+                               !rounded-full">
+                    <button class="btn primary !rounded-[25px]" @click=${this.sendMessage}>
+                        ${t("support_center_page.send_btn")}
                     </button>
                 </div>
             </div>

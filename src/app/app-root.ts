@@ -1,6 +1,5 @@
-import {html, LitElement} from "lit";
+import {html} from "lit";
 import {customElement, state} from "lit/decorators.js";
-import {SignalWatcher} from "@lit-labs/signals";
 import {provide} from "@lit/context";
 import {AuthService, authServiceContext} from "../services/auth-service.ts";
 import {Query} from "../core/query.ts";
@@ -9,14 +8,19 @@ import {HashRouteController} from "../core/router.ts";
 import {ReadStateService, readStateServiceContext} from "../services/read-state-service.ts";
 import {SupportService, supportServiceContext} from "../services/support-service.ts";
 import {NewsService, newsServiceContext} from "../services/news-service.ts";
-import {type App, appStore, isApp} from "../core/app-store.ts";
+import {type App, appStore, type Edition, isApp, isEdition} from "../core/app-store.ts";
 import {isLocale, type Locale, t} from "../i18n/translation.ts";
 import {UserService, userServiceContext} from "../services/user-service.ts";
+import {cache} from "lit/directives/cache.js";
+import {BaseElement} from "../components/base-element.ts";
 
 @customElement('app-root')
-export class AppRoot extends SignalWatcher(LitElement) {
+export class AppRoot extends BaseElement {
     #routeController = new HashRouteController(this, [
-        ['/', () => html`<h1>Home Page</h1>`],
+        ['/', () => html`
+            <home-page></home-page>`],
+        ['/home', () => html`
+            <home-page></home-page>`],
         ['/admin', () => html`
             <admin-page></admin-page>`],
         ['/news', () => html`
@@ -60,19 +64,19 @@ export class AppRoot extends SignalWatcher(LitElement) {
 
     private onNavigate() {
         const app = Query.get("app") as App;
-        const appId = Query.get("app_id");
-        const appVersion = Query.get("app_version");
+        const edition = Query.get("edition") as Edition;
+        const version = Query.get("version");
         const locale = Query.get("locale") as Locale;
         const darkMode = Query.getBoolean("dark_mode");
 
         if (app)
             appStore.app.set(app);
 
-        if (appId)
-            appStore.appId.set(appId);
+        if (edition)
+            appStore.edition.set(edition);
 
-        if (appVersion)
-            appStore.appVersion.set(appVersion);
+        if (version)
+            appStore.version.set(version);
 
         if (locale) {
             appStore.locale.set(locale);
@@ -80,9 +84,14 @@ export class AppRoot extends SignalWatcher(LitElement) {
         }
 
         appStore.darkMode.set(darkMode);
-        document.documentElement.setAttribute("data-theme", darkMode ? "dark" : "light");
+        //document.documentElement.setAttribute("data-theme", darkMode ? "dark" : "light");
 
-        this.error = !isApp(app) || app == "unknown" || !appId || !appVersion || !isLocale(locale);
+        if (darkMode)
+            document.documentElement.classList.add("dark");
+        else
+            document.documentElement.classList.remove("dark");
+
+        this.error = !isApp(app) || app == "Unknown" || !isEdition(edition) || !edition || !version || !isLocale(locale);
     }
 
     requestUpdate() {
@@ -122,7 +131,7 @@ export class AppRoot extends SignalWatcher(LitElement) {
             ${this.authService.isLoggedIn ? "logged-in" : "logged-out"}
             ${appStore.darkMode.get() ? "dark-mode" : "light-mode"}
 " data-theme="${appStore.darkMode.get() ? "dark" : "light"}">
-                ${this.#routeController.render()}
+                ${cache(this.#routeController.render())}
             </page>
         `;
     }

@@ -1,4 +1,4 @@
-.news-container {
+/*.news-container {
     margin: auto;
     padding: 24px;
     background: var(--news-bg);
@@ -83,7 +83,7 @@
     color: var(--news-text);
     line-height: 1.75;
     font-size: 15px;
-    /*white-space: pre-wrap;*/
+    /*white-space: pre-wrap;
 }
 
 .news-text p {
@@ -115,7 +115,7 @@
     --news-date: #8b949e;
 
     --news-accent: #4FC3F7;
-    --news-shadow: 0 4px 16px rgba(0,0,0,.06);
+    --news-shadow: 0 4px 16px rgba(0, 0, 0, .06);
 
     --badge-bg: #2ecc71;
     --badge-text: #ffffff;
@@ -131,7 +131,7 @@
     --news-date: #9ca3af;
 
     --news-accent: #4FC3F7;
-    --news-shadow: 0 8px 24px rgba(0,0,0,.35);
+    --news-shadow: 0 8px 24px rgba(0, 0, 0, .35);
 
     --badge-bg: #2ecc71;
     --badge-text: white;

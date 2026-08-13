@@ -1,9 +1,5 @@
-import {html, LitElement, type PropertyValues, unsafeCSS} from "lit";
+import {html, type PropertyValues, unsafeCSS} from "lit";
 import {customElement, property, query, state} from "lit/decorators.js";
-import styles from './news-modal.css?inline';
-import news from '../../news/news-page.css?inline';
-import shared from "./shared.css?inline";
-import theme from "../admin-theme.css?inline";
 import {type News} from "../../../models/news.ts";
 import {type Language, Languages} from "../../../models/language.ts";
 import {t} from "../../../i18n/translation.ts";
@@ -12,10 +8,15 @@ import dayjs from "dayjs";
 import {supabase} from "../../../services/supabase.ts";
 import {type NewsTranslation} from "../../../models/translations.ts";
 import {NewsSituations, type NewsStatus} from "../../../models/database.ts";
+import {BaseElement} from "../../../components/base-element.ts";
+import {globalStyles} from "../../../core/css.ts";
+import shared from "./shared.css?inline";
+import styles from "./news-modal.css?inline";
+import {appStore} from "../../../core/app-store.ts";
 
 @customElement("news-modal")
-export class NewsModal extends LitElement {
-    static styles = [unsafeCSS(styles), unsafeCSS(news), unsafeCSS(shared), unsafeCSS(theme)];
+export class NewsModal extends BaseElement {
+    static styles = [globalStyles, unsafeCSS(shared), unsafeCSS(styles)];
 
     static properties = {
         open: {type: Boolean}
@@ -207,12 +208,13 @@ export class NewsModal extends LitElement {
                     <div class="modal-header"><h3>${t("admin_page.tabs.news.modal.title")}</h3>
                         <button class="close" @click=${this.close}>×</button>
                     </div>
-                    <div class="field">
+                    <div class="modal-content">
+                        <div class="field">
                         <label>${t("admin_page.tabs.news.modal.language")}</label>
                         <select-box
                                 @change=${(e: CustomEvent) => {
-                                    this.selectedLanguage = e.detail;
-                                }} .selected=${this.selectedLanguage}>
+            this.selectedLanguage = e.detail;
+        }} .selected=${this.selectedLanguage}>
                             ${Languages.map(language => html`
                                 <select-option title=${t(`languages.${language}`)} .data=${language}></select-option>
                             `)}
@@ -222,33 +224,55 @@ export class NewsModal extends LitElement {
                         <label>${t("admin_page.tabs.news.modal.status")}</label>
                         <select-box
                                 @change=${(e: CustomEvent) => {
-                                    this.selectedStatus = e.detail;
-                                }} .selected=${this.selectedStatus}>
+            this.selectedStatus = e.detail;
+        }} .selected=${this.selectedStatus}>
                             ${NewsSituations.map(status => html`
                                 <select-option title=${t(`news.status.${status}`)} .data=${status}></select-option>
                             `)}
                         </select-box>
                     </div>
                     ${this.isPreview ? html`
-                        <div>
-                            <div>
-                                <div class="news">
-                                    <article class="news-item" data-id=${this.item?.id}>
-                                        <div class="news-title">
-                                            ${Markdown.render(this.translations?.title[this.selectedLanguage])}
+                        <div class="mx-auto p-6">
+                            <div class="flex flex-col gap-[18px]">
+                                <article class="news-item card">
+                                    <div class="
+                                flex
+                                items-center
+                                gap-2.5
+                                mb-1.5
+                                text-xl
+                                font-bold
+                                before:content-['']
+                                before:block
+                                before:w-[5px]
+                                before:h-6
+                                before:rounded-full
+                                before:bg-(--warning)">
+                                        ${Markdown.render(this.translations?.title[appStore.locale.get()])}
 
-                                            <span class="news-badge">${t("news.badge")}</span>
-                                        </div>
+                                        <span
+                                                class="
+                                            px-2.5
+                                            py-[3px]
+                                            rounded-full
+                                            bg-(--badge-bg)
+                                            text-(--badge-text)
+                                            text-[11px]
+                                            font-bold
+                                            tracking-[0.3px]">${t("news_page.badge")}</span>
+                                    </div>
 
-                                        <div class="news-date">
-                                            ${dayjs(this.item?.created_at).fromNow()}
-                                        </div>
+                                    <div class="date">
+                                        ${dayjs(this.item?.created_at).fromNow()}
+                                    </div>
 
-                                        <div class="news-text">
-                                            ${Markdown.render(this.translations?.text[this.selectedLanguage])}
-                                        </div>
-                                    </article>
-                                </div>
+                                    <div class="
+                                text-(--text-secondary)
+                                leading-[1.75]
+                                text-[15px]">
+                                        ${Markdown.render(this.translations?.text[appStore.locale.get()])}
+                                    </div>
+                                </article>
                             </div>
                         </div>
                     ` : html`
@@ -272,6 +296,7 @@ export class NewsModal extends LitElement {
                             </div>
                         </div>-->
                     `}
+                    </div>
                     <div class="modal-actions">
                         ${this.isRunning ? html`
                             <span class="status-message">${t("admin_page.tabs.news.modal.messages.running")}</span>

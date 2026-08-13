@@ -5,9 +5,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6684df7-2dea-4bb1-934d-5373c35f5952" name="Changes" comment="Commit">
+      <change afterPath="$PROJECT_DIR$/src/components/base-element.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/encrypt.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/global.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/components.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/markdown.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/scrollbar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/tailwind.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.development" beforeDir="false" afterPath="$PROJECT_DIR$/.env.development" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.production" beforeDir="false" afterPath="$PROJECT_DIR$/.env.production" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/remote-config-dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/remote-config-dev.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/remote-config.json" beforeDir="false" afterPath="$PROJECT_DIR$/remote-config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app-root.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-root.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/loading-spinner.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loading-spinner.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/select-box.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/select-box.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/app-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/app-store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/application-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/application-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/github-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/github-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/markdown.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/markdown.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/router.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18n/tr.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/tr.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/github/github-content.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/admin-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/admin-page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/admin-page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/admin-page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/admin-page2.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/admin-theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/login/admin-login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/login/admin-login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/login/admin-login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/login/admin-login.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/tabs/news-modal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/tabs/news-modal.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/tabs/news-tab.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/tabs/news-tab.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/tabs/shared.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/tabs/shared.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/tabs/support-center-tab.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/tabs/support-center-tab.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/tabs/support-center-tab.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/tabs/support-center-tab.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/tabs/users-tab.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/tabs/users-tab.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/admin/tabs/users-tab.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/tabs/users-tab.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/home-page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home-page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/news/news-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/news-page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/news/news-page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/news-page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/redeem-code/redeem-code-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/redeem-code/redeem-code-page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/redeem-code/redeem-code-page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/redeem-code/redeem-code-page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/release-notes/release-notes-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/release-notes/release-notes-page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/release-notes/release-notes-page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/release-notes/release-notes-page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/support-center/support-center-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/support-center/support-center-page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/support-center/support-center-page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/support-center/support-center-page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/version-history/version-history-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/version-history/version-history-page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/version-history/version-history-page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/version-history/version-history-page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/read-state-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/read-state-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supabase/seed.dev.sql" beforeDir="false" afterPath="$PROJECT_DIR$/supabase/seed.dev.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,12 +86,12 @@
     &quot;assignee&quot;: &quot;the3life&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/the3life/flightecho-web.git&quot;,
-    &quot;accountId&quot;: &quot;634a7782-564f-4c0a-8067-92300163e554&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/the3life/flightecho-web.git",
+    "accountId": "e8349db8-bca2-4954-b6a0-cdb3f34fa4b2"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -57,12 +110,18 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
     &quot;last_opened_file_path&quot;: &quot;W:/Projects/flightecho-web&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
@@ -90,11 +149,11 @@
       <recent name="W:\Projects\flightecho-web\src\models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="W:\Projects\flightecho-web\src\core" />
-      <recent name="W:\Projects\flightecho-web\src\pages\admin\tabs" />
-      <recent name="W:\Projects\flightecho-web\src\i18n" />
+      <recent name="W:\Projects\flightecho-web\src\components" />
+      <recent name="W:\Projects\flightecho-web\src\components\select-box" />
+      <recent name="W:\Projects\flightecho-web\src\styles" />
       <recent name="W:\Projects\flightecho-web\src" />
-      <recent name="W:\Projects\flightecho-web\src\app" />
+      <recent name="W:\Projects\flightecho-web\src\pages\version-history" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm dev">
@@ -125,7 +184,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.27397.92" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-WS-262.9437.145" />
       </set>
     </attachedChunks>
   </component>
@@ -171,7 +230,22 @@
       <workItem from="1785621484902" duration="8733000" />
       <workItem from="1785668054107" duration="7798000" />
       <workItem from="1785684988899" duration="8893000" />
-      <workItem from="1785816123539" duration="15000" />
+      <workItem from="1785816123539" duration="2579000" />
+      <workItem from="1785841674254" duration="6643000" />
+      <workItem from="1786021559363" duration="2266000" />
+      <workItem from="1786029941608" duration="5394000" />
+      <workItem from="1786084562141" duration="5911000" />
+      <workItem from="1786094666693" duration="25688000" />
+      <workItem from="1786173072289" duration="29000" />
+      <workItem from="1786179574701" duration="150000" />
+      <workItem from="1786179982038" duration="631000" />
+      <workItem from="1786184538029" duration="2135000" />
+      <workItem from="1786262081200" duration="4587000" />
+      <workItem from="1786295198104" duration="9097000" />
+      <workItem from="1786372858241" duration="5426000" />
+      <workItem from="1786444736110" duration="3721000" />
+      <workItem from="1786517567829" duration="3987000" />
+      <workItem from="1786634221449" duration="2551000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <option name="closed" value="true" />
@@ -237,7 +311,31 @@
       <option name="project" value="LOCAL" />
       <updated>1785696453198</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1785816161366</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1785816161366</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1786634938910</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1786634938910</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1786635041459</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1786635041459</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -1,18 +1,18 @@
-import type {ReactiveControllerHost} from "lit";
+import type {ReactiveControllerHost, TemplateResult} from "lit";
 
 type Route = [
     string,
-    (context: RouteContext) => unknown
+    () => TemplateResult<1>
 ];
 
-type RouteContext = {
+/*type RouteContext = {
     params: Record<string, string | undefined>;
     query: URLSearchParams;
-};
+};*/
 
 type CompiledRoute = [
     URLPattern,
-    (context: RouteContext) => unknown
+    TemplateResult<1>
 ];
 
 export class Router {
@@ -71,7 +71,7 @@ export class HashRouteController {
         this.#host = host;
         this.#routes = routes.map(([p, render]) => [
             new URLPattern(p, Router.baseUrl),
-            render,
+            render(),
         ]);
 
         this.#host.addController(this);
@@ -104,7 +104,7 @@ export class HashRouteController {
             x => x instanceof HTMLElement
         ) as HTMLElement | undefined;
 
-        if(!element) return;
+        if (!element) return;
 
         const href = element.closest("[data-href]")?.getAttribute("data-href");
 
@@ -149,13 +149,10 @@ export class HashRouteController {
         const path = window.location.hash.substring(1) || '/';
         const url = new URL(path, Router.baseUrl);
 
-        for (const [pattern, render] of this.#routes) {
+        for (const [pattern, template] of this.#routes) {
             const result = pattern.exec(url);
 
-            if (result) return render({
-                params: result.pathname.groups,
-                query: url.searchParams
-            });
+            if (result) return template;
         }
 
         return null;

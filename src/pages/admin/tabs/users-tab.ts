@@ -1,22 +1,22 @@
 import {html, unsafeCSS} from "lit";
 import {customElement, state} from "lit/decorators.js";
-import styles from './users-tab.css?inline';
-import shared from "./shared.css?inline";
-import theme from "../admin-theme.css?inline";
 import {consume} from "@lit/context";
 import {UserService, userServiceContext} from "../../../services/user-service.ts";
 import {Page} from "../../page.ts";
 import dayjs from "dayjs";
 import {supabase} from "../../../services/supabase.ts";
 import type {UserState} from "../../../models/user-state.ts";
-import {RealtimeChannel} from "@supabase/realtime-js";
 import type {User} from "../../../models/user.ts";
 import {FlightMode} from "../../../models/flight-mode.ts";
 import {t} from "../../../i18n/translation.ts";
+import type {RealtimeChannel} from "@supabase/supabase-js";
+import {globalStyles} from "../../../core/css.ts";
+import shared from "./shared.css?inline";
+import styles from "./users-tab.css?inline";
 
 @customElement("users-tab")
 export class UsersTab extends Page {
-    static styles = [unsafeCSS(styles), unsafeCSS(shared), unsafeCSS(theme)];
+    static styles = [globalStyles, unsafeCSS(shared), unsafeCSS(styles)];
 
     @consume({context: userServiceContext})
     private userService!: UserService;
@@ -24,6 +24,7 @@ export class UsersTab extends Page {
     @state()
     private onlineUsers: Record<string, UserState> = {};
 
+    @state()
     private presenceChannel?: RealtimeChannel;
 
     protected async initializePage(): Promise<boolean> {
@@ -92,8 +93,9 @@ export class UsersTab extends Page {
                 </div>
             </div>
             <div class="section">
-                <div class="section-header"><h3>${t("admin_page.tabs.users.title")}</h3> <input class="search"
-                                                                                           placeholder=${t("admin_page.tabs.users.search.input.placeholder")}/>
+                <div class="section-header">
+                    <h3>${t("admin_page.tabs.users.title")}</h3>
+                    <input class="search" placeholder=${t("admin_page.tabs.users.search.input.placeholder")}/>
                 </div>
                 <table>
                     <thead>

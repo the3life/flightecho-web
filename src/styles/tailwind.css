@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@import "base.css";
+@import "markdown.css";
+@import "components.css";
+@import "scrollbar.css";
+
+@theme{
+    --font-family: 'Segoe UI';
+
+    /* Temaya bağlı renkleri Tailwind sınıflarına bağlıyoruz */
+    --color-bg-primary: var(--bg-primary);
+    --color-bg-card: var(--bg-card);
+    --color-text-main: var(--text-main);
+    --color-text-muted: var(--text-muted);
+    --color-border-main: var(--border-main);
+    --color-brand: #ff0000;
+}
+

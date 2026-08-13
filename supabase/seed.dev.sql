@@ -78,33 +78,55 @@ values (1);
 insert into fe_v4.translation_records(entity_id)
 values (1);
 
+insert into fe_v4.translation_records(entity_id)
+values (1);
+
+insert into fe_v4.translation_records(entity_id)
+values (1);
+
 insert into fe_v4.translations(translation_record_id, translation_field_id, language, value)
 values (1, 1, 'en', 'Test Title 1');
 insert into fe_v4.translations(translation_record_id, translation_field_id, language, value)
 values (2, 1, 'en', 'Test Title 2');
 insert into fe_v4.translations(translation_record_id, translation_field_id, language, value)
-values (3, 1, 'en', 'Test Video');
+values (3, 1, 'en', 'Test Title 3');
+insert into fe_v4.translations(translation_record_id, translation_field_id, language, value)
+values (4, 1, 'en', 'Text Image');
+insert into fe_v4.translations(translation_record_id, translation_field_id, language, value)
+values (5, 1, 'en', 'Test Video');
 
 insert into fe_v4.translations(translation_record_id, translation_field_id, language, value)
 values (1, 1, 'tr', 'Deneme Başlık 1');
 insert into fe_v4.translations(translation_record_id, translation_field_id, language, value)
 values (2, 1, 'tr', 'Deneme Başlık 2');
 insert into fe_v4.translations(translation_record_id, translation_field_id, language, value)
-values (3, 1, 'tr', 'Deneme Video');
+values (3, 1, 'tr', 'Deneme Başlık 3');
+insert into fe_v4.translations(translation_record_id, translation_field_id, language, value)
+values (4, 1, 'tr', 'Deneme Resim');
+insert into fe_v4.translations(translation_record_id, translation_field_id, language, value)
+values (5, 1, 'tr', 'Deneme Video');
 
 insert into fe_v4.translations(translation_record_id, translation_field_id, language, value)
 values (1, 2, 'en', 'Test Text 1');
 insert into fe_v4.translations(translation_record_id, translation_field_id, language, value)
 values (2, 2, 'en', 'Test Text 2');
 insert into fe_v4.translations(translation_record_id, translation_field_id, language, value)
-values (3, 2, 'en', 'Test Video https://www.youtube.com/watch?v=OMbY_OHYrf0&pp=ygUMcGluayBwYW50aGVy');
+values (3, 2, 'en', 'Test Text 3');
+insert into fe_v4.translations(translation_record_id, translation_field_id, language, value)
+values (4, 2, 'en', 'Test Image ![](https://ofleirppadkrpqkdyhcd.supabase.co/storage/v1/object/public/Images/buttons.jpg)');
+insert into fe_v4.translations(translation_record_id, translation_field_id, language, value)
+values (5, 2, 'en', 'Test Video https://www.youtube.com/watch?v=OMbY_OHYrf0&pp=ygUMcGluayBwYW50aGVy');
 
 insert into fe_v4.translations(translation_record_id, translation_field_id, language, value)
 values (1, 2, 'tr', 'Deneme İçerik 1');
 insert into fe_v4.translations(translation_record_id, translation_field_id, language, value)
 values (2, 2, 'tr', 'Deneme İçerik 2');
 insert into fe_v4.translations(translation_record_id, translation_field_id, language, value)
-values (3, 2, 'tr', 'Deneme Video https://www.youtube.com/watch?v=OMbY_OHYrf0&pp=ygUMcGluayBwYW50aGVy');
+values (3, 2, 'tr', 'Deneme İçerik 3');
+insert into fe_v4.translations(translation_record_id, translation_field_id, language, value)
+values (4, 2, 'tr', 'Deneme Resim ![](https://ofleirppadkrpqkdyhcd.supabase.co/storage/v1/object/public/Images/buttons.jpg)');
+insert into fe_v4.translations(translation_record_id, translation_field_id, language, value)
+values (5, 2, 'tr', 'Deneme Video https://www.youtube.com/watch?v=OMbY_OHYrf0&pp=ygUMcGluayBwYW50aGVy');
 
 insert into fe_v4.news (translation_record_id, status)
 values (1, 'published');
@@ -114,6 +136,12 @@ values (2, 'published');
 
 insert into fe_v4.news (translation_record_id, status)
 values (3, 'published');
+
+insert into fe_v4.news (translation_record_id, status)
+values (4, 'published');
+
+insert into fe_v4.news (translation_record_id, status)
+values (5, 'published');
 
 -- Test
 

@@ -2,8 +2,13 @@
     display: block;
     min-height: 100vh;
     background: var(--bg);
-    color: var(--text);
-    font-family: Inter, system-ui, sans-serif;
+
+    --panel: #fff;
+    --border: var(--card-border);
+}
+
+:host-context(.dark) {
+    --panel: #25282d;
 }
 
 .container {
@@ -74,7 +79,7 @@
     width: 36px;
     height: 36px;
     border-radius: 999px;
-    background: #1f2937;
+    background: #393939;
     display: grid;
     place-items: center;
 }

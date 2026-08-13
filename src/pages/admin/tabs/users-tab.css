@@ -28,23 +28,3 @@
 .online .icon {
     background: var(--success);
 }
-
-.section {
-    background: #0f172a;
-    border: 1px solid #1f2937;
-    border-radius: 18px;
-    overflow: hidden;
-}
-
-.section-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 18px 20px;
-    border-bottom: 1px solid #1f2937;
-}
-
-.section-header h3 {
-    margin: 0;
-    font-size: 22px;
-}

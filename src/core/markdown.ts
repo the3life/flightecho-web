@@ -12,14 +12,15 @@ export class Markdown {
             if (!href) return "";
 
             return `
-<div class="markdown-image">
+<div class="markdown-image my-4 text-center">
     <img
         src="${href}"
         alt="${text ?? ""}"
         title="${title ?? ""}"
         loading="lazy"
+        class="block max-w-full rounded-xl"
     />
-    ${text ? `<div class="caption">${text}</div>` : ""}
+    ${text ? `<div class="caption mt-2 text-[13px] text-(--news-date)">${text}</div>` : ""}
 </div>`;
         };
 
@@ -33,13 +34,11 @@ export class Markdown {
 
             if (match) {
                 return `
-<div class="youtube-video">
+<div class="youtube-video w-full aspect-video my-4">
     <iframe
         src="https://www.youtube.com/embed/${match[1]}"
-        width="100%"
-        height="400"
+        class="w-full h-full border-0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        frameborder="0"
         loading="lazy"
         allowfullscreen>
     </iframe>

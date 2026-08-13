@@ -1,8 +1,6 @@
 import {Page} from "../page.ts";
 import {customElement, state} from "lit/decorators.js";
 import {html, unsafeCSS} from "lit";
-import styles from './redeem-code-page.css?inline';
-import global from "../../index.css?inline";
 import {supabase} from "../../services/supabase.ts";
 import type {SupabaseResponse} from "../../models/supabase-response.ts";
 import type {Code} from "../../models/code.ts";
@@ -12,12 +10,14 @@ import {t} from "../../i18n/translation.ts";
 import type {Application} from "../../models/application.ts";
 import {GithubApi} from "../../core/github-api.ts";
 import {delay} from "../../core/delay.ts";
+import {BaseElement} from "../../components/base-element.ts";
+import styles from './redeem-code-page.css?inline';
 
 type Step = "input" | "verifying" | "result";
 
 @customElement("redeem-code-page")
 export class RedeemCodePage extends Page {
-    static styles = [unsafeCSS(styles), unsafeCSS(global)];
+    static styles = [...BaseElement.styles, unsafeCSS(styles)];
 
     @state() private step: Step = "input";
     @state() private code = "AAAA-BBBB-CCCC-DDDD";
@@ -35,20 +35,20 @@ export class RedeemCodePage extends Page {
     private async submitCode() {
         if (!this.code.trim()) return;
 
-        this.verifying(t("redeem_code.verifying.checking"));
+        this.verifying(t("redeem_code_page.verifying.checking"));
 
         await delay(1200);
 
         if (!this.validateCode(this.code)) {
-            await this.result(false, t("redeem_code.verifying.invalid"));
+            await this.result(false, t("redeem_code_page.verifying.invalid"));
 
             return;
         }
 
-        this.verifying(t("redeem_code.verifying.server"));
+        this.verifying(t("redeem_code_page.verifying.server"));
         await delay(1200);
 
-        this.verifying(t("redeem_code.verifying.preparing"));
+        this.verifying(t("redeem_code_page.verifying.preparing"));
         await delay(900);
 
         const {data, error} = await supabase
@@ -61,12 +61,12 @@ export class RedeemCodePage extends Page {
                 if (data.success)
                     await this.result(true, data.data);
                 else
-                    await this.result(false, t("redeem_code.verifying.codes." + data.code));
+                    await this.result(false, t("redeem_code_page.verifying.codes." + data.code));
             } else {
-                await this.result(false, t("redeem_code.verifying.codes.FAILED"));
+                await this.result(false, t("redeem_code_page.verifying.codes.FAILED"));
             }
         } else {
-            await this.result(false, t("redeem_code.verifying.codes.FAILED"));
+            await this.result(false, t("redeem_code_page.verifying.codes.FAILED"));
         }
     }
 
@@ -141,22 +141,34 @@ export class RedeemCodePage extends Page {
 
     renderPage() {
         return html`
-            <div class="container">
-                <div class="card">
-                    <div class="logo">🔐</div>
+            <div class="min-h-screen
+    grid
+    place-items-center
+    p-6
+    box-border">
+                <div class="card w-[520px] max-w-full">
+                    <div class="logo
+                        w-16 h-16
+                        rounded-[18px]
+                        bg-accent
+                        grid place-items-center
+                        text-[28px]
+                        mx-auto mb-5">🔐
+                    </div>
 
                     ${this.step === "input" ? html`
-                        <h1>${t("redeem_code.input.title")}</h1>
+                        <h1 class="m-0 mb-2.5 text-center text-[28px] font-bold">
+                            ${t("redeem_code_page.input.title")}</h1>
                         <p class="subtitle">
-                            ${t("redeem_code.input.subtitle")}
+                            ${t("redeem_code_page.input.subtitle")}
                         </p>
 
-                        <div class="field">
-                            <label>${t("redeem_code.input.input.label")}</label>
+                        <div class="field grid gap-2.5 mb-[22px]">
+                            <label class="font-semibold">${t("redeem_code_page.input.input.label")}</label>
 
                             <input
                                     .value=${this.code}
-                                    placeholder=${t("redeem_code.input.input.placeholder")}
+                                    placeholder=${t("redeem_code_page.input.input.placeholder")}
                                     maxlength="24"
                                     @input=${(e: Event) => {
                                         this.code = (e.target as HTMLInputElement).value;
@@ -166,11 +178,12 @@ export class RedeemCodePage extends Page {
                                             this.submitCode();
                                         }
                                     }}
+                                    class="uppercase text-center"
                             />
                         </div>
 
                         <div class="actions">
-                            <button @click=${this.submitCode}>${t("redeem_code.input.redeem_btn")}</button>
+                            <button @click=${this.submitCode}>${t("redeem_code_page.input.redeem_btn")}</button>
                         </div>
                     ` : null}
 
@@ -178,7 +191,7 @@ export class RedeemCodePage extends Page {
                         <div class="verify">
                             <div class="spinner"></div>
 
-                            <h1>${t("redeem_code.verifying.title")}</h1>
+                            <h1>${t("redeem_code_page.verifying.title")}</h1>
 
                             <div class="stage">${this.verifyStage}</div>
 
@@ -187,7 +200,7 @@ export class RedeemCodePage extends Page {
                             </div>
 
                             <p class="subtitle">
-                                ${t("redeem_code.verifying.subtitle")}
+                                ${t("redeem_code_page.verifying.subtitle")}
                             </p>
                         </div>
                     ` : null}
@@ -199,10 +212,10 @@ export class RedeemCodePage extends Page {
                                     🎁
                                 </div>
 
-                                <h2>${t("redeem_code.result.title")}</h2>
+                                <h2>${t("redeem_code_page.result.title")}</h2>
 
                                 <p>
-                                    ${t("redeem_code.result.subtitle")}
+                                    ${t("redeem_code_page.result.subtitle")}
                                 </p>
 
                                 <div class="reward-card">
@@ -242,14 +255,14 @@ export class RedeemCodePage extends Page {
                                 </div>
 
                                 <h2>
-                                    ${t("redeem_code.verifying.failed")}
+                                    ${t("redeem_code_page.verifying.failed")}
                                 </h2>
 
                                 <p>${this.resultMessage}</p>
 
                                 <div class="actions">
                                     <button class="secondary" @click=${this.reset}>
-                                        ${t("redeem_code.verifying.retry_btn")}
+                                        ${t("redeem_code_page.verifying.retry_btn")}
                                     </button>
                                 </div>
                             </div>

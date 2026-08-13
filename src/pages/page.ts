@@ -1,12 +1,12 @@
-import {html, LitElement} from "lit";
-import {SignalWatcher} from "@lit-labs/signals";
-import {state} from "lit/decorators.js";
+import {html} from "lit";
 import {consume} from "@lit/context";
 import {AuthService, authServiceContext} from "../services/auth-service.ts";
 import {ReadStateService, readStateServiceContext} from "../services/read-state-service.ts";
 import {t} from "../i18n/translation.ts";
+import {state} from "lit/decorators.js";
+import {BaseElement} from "../components/base-element.ts";
 
-export abstract class Page extends SignalWatcher(LitElement) {
+export abstract class Page extends BaseElement {
     @consume({context: authServiceContext})
     authService!: AuthService;
 
@@ -14,26 +14,27 @@ export abstract class Page extends SignalWatcher(LitElement) {
     readStateService!: ReadStateService;
 
     @state()
-    private ready: boolean = false;
+    protected initialized: boolean = false;
 
     @state()
-    private error: boolean = false;
+    protected error: boolean = false;
 
     constructor(protected readonly isAuthRequired?: "member" | "admin") {
         super();
     }
 
     protected async firstUpdated() {
-        let ready: boolean;
+        if (this.initialized)
+            return;
 
         try {
-            ready = await this.initializePage();
+            this.initialized = await this.initializePage();
         } catch (e) {
-            ready = false;
-        }
+            console.log(e);
 
-        this.ready = ready;
-        this.error = !ready;
+            this.initialized = false;
+            this.error = true;
+        }
     }
 
     render() {
@@ -41,7 +42,7 @@ export abstract class Page extends SignalWatcher(LitElement) {
             return html`
                 <app-error title=${t("errors.page.title")} message=${t("errors.page.message")}></app-error>`;
 
-        if (!this.ready)
+        if (!this.initialized)
             return html`
                 <loading-spinner></loading-spinner>`;
 
@@ -56,7 +57,7 @@ export abstract class Page extends SignalWatcher(LitElement) {
         return this.renderPage();
     }
 
-    protected initializePage(): Promise<boolean> {
+    protected initializePage() {
         return Promise.resolve(true);
     }
 

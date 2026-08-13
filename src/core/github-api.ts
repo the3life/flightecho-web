@@ -1,5 +1,3 @@
-import type {GithubContent} from "../models/github/github-content.ts";
-
 export interface GithubRelease {
     id: number;
     tag_name: string;
@@ -20,6 +18,19 @@ export interface GithubAsset {
     browser_download_url: string;
     size: number;
     download_count: number;
+}
+
+export interface GithubContent {
+    name: string;
+    path: string;
+    sha: string;
+    size: number;
+    url: string;
+    git_url: string;
+    download_url: string;
+    type: string;
+    content: string;
+    encoding: string;
 }
 
 export class GithubApi {
@@ -102,9 +113,9 @@ export class GithubApiCore {
         );
 
         if (!response.ok) {
-            /*const errorText = await response.text();
+            const errorText = await response.text();
 
-            console.error('GitHub API error:', response.status, errorText);*/
+            console.error('GitHub API error:', response.status, errorText);
 
             throw new Error(
                 `GitHub API error: ${response.status} ${response.statusText}`

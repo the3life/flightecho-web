@@ -18,14 +18,15 @@ export class ReadStateService {
     }
 
     addObserver(element: ReactiveElement,
+                name: string,
                 tableName: string,
                 selectors: string) {
 
-        this.observers.set(tableName, new ReadStateObserver(element, tableName, selectors));
+        this.observers.set(name, new ReadStateObserver(element, tableName, selectors));
     }
 
-    removeObserver(tableName: string) {
-        this.observers.delete(tableName);
+    removeObserver(name: string) {
+        this.observers.delete(name);
     }
 
     protected update() {

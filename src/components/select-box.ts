@@ -1,5 +1,6 @@
-import {css, html, LitElement, nothing} from "lit";
+import {html, LitElement, nothing} from "lit";
 import {customElement, property, queryAssignedElements} from "lit/decorators.js";
+import {globalStyles} from "../core/css.ts";
 
 @customElement("select-option")
 export class SelectOption extends LitElement {
@@ -14,6 +15,8 @@ export class SelectOption extends LitElement {
 
 @customElement("select-box")
 export class SelectBox extends LitElement {
+    static styles = [globalStyles];
+
     @property()
     placeholder?: string;
 
@@ -64,38 +67,4 @@ export class SelectBox extends LitElement {
             <slot hidden @slotchange=${this.onSlotChange}></slot>
         `;
     }
-
-    static styles = css`
-        :host {
-            display: block;
-            width: 100%;
-        }
-
-        select {
-            width: 100%;
-            padding: 12px 14px;
-
-            border-radius: 12px;
-            border: 1px solid #374151;
-
-            background: #0b1220;
-            color: #e5e7eb;
-
-            font: inherit;
-            outline: none;
-            cursor: pointer;
-
-            transition: border-color .2s ease, box-shadow .2s ease;
-        }
-
-        select:focus {
-            border-color: #2563eb;
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, .18);
-        }
-
-        option {
-            background: #111827;
-            color: #e5e7eb;
-        }
-    `;
 }

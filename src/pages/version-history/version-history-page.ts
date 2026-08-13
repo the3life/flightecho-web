@@ -1,23 +1,23 @@
 import {customElement, state} from "lit/decorators.js";
 import {html, unsafeCSS} from "lit";
-import styles from './version-history-page.css?inline';
-import globalCss from "../../index.css?inline";
 import {Page} from "../page.ts";
 import dayjs from "dayjs";
 import {ApplicationApi, type ApplicationVersion} from "../../core/application-api.ts";
 import {t} from "../../i18n/translation.ts";
 import {appStore} from "../../core/app-store.ts";
 import {Markdown} from "../../core/markdown.ts";
+import styles from './version-history-page.css?inline';
+import {globalStyles} from "../../core/css.ts";
 
 @customElement("version-history-page")
 export class VersionHistoryPage extends Page {
-    static styles = [unsafeCSS(globalCss), unsafeCSS(styles)];
+    static styles = [globalStyles, unsafeCSS(styles)];
 
     @state()
     versions?: ApplicationVersion[];
 
     protected async initializePage() {
-        this.versions = await ApplicationApi.getAllVersions(appStore.appId.get());
+        this.versions = await ApplicationApi.getAllVersions(appStore.edition.get());
 
         return true;
     }
@@ -27,31 +27,31 @@ export class VersionHistoryPage extends Page {
     }
 
     private isCurrentVersion(version: ApplicationVersion) {
-        return version.version === appStore.appVersion.get();
+        return version.version === appStore.version.get();
     }
 
     renderPage() {
         return html`
-            <div class="version-container">
-                <div class="version-header">
-                    <h1>${t("version_history.title")}</h1>
+            <div class="version-container max-w-[1000px] mx-auto p-8">
+                <div class="version-header lex justify-between items-center mb-8">
+                    <h1 class="m-0 text-[34px]">${t("version_history_page.title")}</h1>
                 </div>
 
-                <div class="timeline">
+                <div class="timeline flex flex-col gap-[22px]">
                     ${this.versions?.map(version => html`
-                        <section class="version-card">
+                        <section class="card">
                             <div class="card-top">
                                 <div>
-                                    <h2>${version.version}</h2>
-                                    <div class="version-date">
+                                    <h2 class="m-0 text-2xl">${version.version}</h2>
+                                    <div class="date mt-1.5">
                                         ${dayjs(version.date).format("MMMM D, YYYY")}
                                     </div>
                                 </div>
 
                                 <div>
                                     ${this.isCurrentVersion(version) ? html`<span
-                                            class="badge installed">${t("version_history.installed")}</span>` : html`
-                                        <button class="restore-btn" @click=${() => this.restore(version)}>
+                                            class="badge green">${t("version_history_page.installed")}</span>` : html`
+                                        <button class="btn restore" @click=${() => this.restore(version)}>
                                             Restore
                                         </button>
                                     `}
@@ -59,9 +59,18 @@ export class VersionHistoryPage extends Page {
                             </div>
 
                             <div class="card-body">
-                                <details>
-                                    <summary>${t("release_notes.title")}</summary>
-                                    <div class="group">
+                                <details class="rounded-xl overflow-hidden">
+                                    <summary class="
+                                        flex
+                                        items-center
+                                        gap-2.5
+                                        cursor-pointer
+                                        list-none
+                                        py-3.5
+                                        font-semibold
+                                        select-none">${t("release_notes_page.title")}
+                                    </summary>
+                                    <div class="group mt-5">
                                         ${Markdown.render(version.releaseNotes[appStore.locale.get()])}
                                     </div>
                                 </details>

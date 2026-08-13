@@ -1,20 +1,20 @@
-import {html, LitElement, unsafeCSS} from "lit";
+import {html, unsafeCSS} from "lit";
 import {customElement, state} from "lit/decorators.js";
-import styles from './news-tab.css?inline';
-import shared from "./shared.css?inline";
-import theme from "../admin-theme.css?inline";
 import {consume} from "@lit/context";
 import {type NewsService, newsServiceContext} from "../../../services/news-service.ts";
 import dayjs from "dayjs";
-import {SignalWatcher} from "@lit-labs/signals";
 import {Markdown} from "../../../core/markdown.ts";
 import {t} from "../../../i18n/translation.ts";
 import type {News} from "../../../models/news.ts";
 import {appStore} from "../../../core/app-store.ts";
+import {Page} from "../../page.ts";
+import {globalStyles} from "../../../core/css.ts";
+import shared from "./shared.css?inline";
+import styles from "./news-tab.css?inline";
 
 @customElement("news-tab")
-export class NewsTab extends SignalWatcher(LitElement) {
-    static styles = [unsafeCSS(styles), unsafeCSS(shared), unsafeCSS(theme)];
+export class NewsTab extends Page {
+    static styles = [globalStyles, unsafeCSS(shared), unsafeCSS(styles)];
 
     @state() private showModal = false;
     @state() private selectedItem?: News;
@@ -22,9 +22,11 @@ export class NewsTab extends SignalWatcher(LitElement) {
     @consume({context: newsServiceContext})
     private newsService!: NewsService;
 
-    protected async firstUpdated() {
+    protected async initializePage() {
         await this.newsService.initialize();
         this.newsService.subscribe();
+
+        return true;
     }
 
     private insert() {
@@ -37,13 +39,16 @@ export class NewsTab extends SignalWatcher(LitElement) {
         this.showModal = true;
     }
 
-    render() {
+    renderPage() {
         return html`
             <div class="toolbar">
-                <h3>${t("admin_page.tabs.news.title")}</h3>
-                <button class="btn primary" @click=${() => this.insert()}> + ${t("admin_page.tabs.news.toolbar.add")}</button>
+                <button class="btn primary" @click=${() => this.insert()}> + ${t("admin_page.tabs.news.toolbar.add")}
+                </button>
             </div>
             <div class="section">
+                <div class="section-header">
+                    <h3>${t("admin_page.tabs.news.title")}</h3>
+                </div>
                 <table>
                     <thead>
                     <tr>
@@ -64,7 +69,7 @@ export class NewsTab extends SignalWatcher(LitElement) {
                                         <span class="status ${news.status == "published" ? "online" : "offline"}">${t(`news.status.${news.status}`)}</span>
                                     </td>
                                     <td>
-                                        <button class="icon-button" @click=${() => this.edit(news.id)}>✏️</button>
+                                        <button class="btn-icon" @click=${() => this.edit(news.id)}>✏️</button>
                                     </td>
                                 </tr>
                             `
