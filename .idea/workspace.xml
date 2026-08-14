@@ -5,62 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6684df7-2dea-4bb1-934d-5373c35f5952" name="Changes" comment="Commit">
-      <change afterPath="$PROJECT_DIR$/src/components/base-element.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/encrypt.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/global.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/components.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/markdown.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/scrollbar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/tailwind.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.development" beforeDir="false" afterPath="$PROJECT_DIR$/.env.development" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.production" beforeDir="false" afterPath="$PROJECT_DIR$/.env.production" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/remote-config-dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/remote-config-dev.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/remote-config.json" beforeDir="false" afterPath="$PROJECT_DIR$/remote-config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app-root.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-root.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/loading-spinner.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loading-spinner.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/select-box.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/select-box.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/app-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/app-store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/application-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/application-api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/github-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/github-api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/markdown.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/markdown.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/router.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/i18n/tr.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/tr.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/github/github-content.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/admin-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/admin-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/admin-page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/admin-page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/admin-page2.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/admin-theme.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/login/admin-login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/login/admin-login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/login/admin-login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/login/admin-login.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/tabs/news-modal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/tabs/news-modal.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/tabs/news-tab.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/tabs/news-tab.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/tabs/shared.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/tabs/shared.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/tabs/support-center-tab.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/tabs/support-center-tab.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/tabs/support-center-tab.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/tabs/support-center-tab.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/tabs/users-tab.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/tabs/users-tab.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/admin/tabs/users-tab.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/admin/tabs/users-tab.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/home-page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home-page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/news/news-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/news-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/news/news-page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/news-page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/redeem-code/redeem-code-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/redeem-code/redeem-code-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/redeem-code/redeem-code-page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/redeem-code/redeem-code-page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/release-notes/release-notes-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/release-notes/release-notes-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/release-notes/release-notes-page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/release-notes/release-notes-page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/support-center/support-center-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/support-center/support-center-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/support-center/support-center-page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/support-center/support-center-page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/version-history/version-history-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/version-history/version-history-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/version-history/version-history-page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/version-history/version-history-page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/read-state-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/read-state-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/supabase/seed.dev.sql" beforeDir="false" afterPath="$PROJECT_DIR$/supabase/seed.dev.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,12 +32,12 @@
     &quot;assignee&quot;: &quot;the3life&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/the3life/flightecho-web.git",
-    "accountId": "e8349db8-bca2-4954-b6a0-cdb3f34fa4b2"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/the3life/flightecho-web.git&quot;,
+    &quot;accountId&quot;: &quot;e8349db8-bca2-4954-b6a0-cdb3f34fa4b2&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -245,7 +191,8 @@
       <workItem from="1786372858241" duration="5426000" />
       <workItem from="1786444736110" duration="3721000" />
       <workItem from="1786517567829" duration="3987000" />
-      <workItem from="1786634221449" duration="2551000" />
+      <workItem from="1786634221449" duration="2680000" />
+      <workItem from="1786709128039" duration="1660000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <option name="closed" value="true" />
@@ -335,7 +282,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786635041459</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Commit">
+      <option name="closed" value="true" />
+      <created>1786636870958</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1786636870958</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
